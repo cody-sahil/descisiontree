@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 # Load the trained Decision Tree model
 with open('decision.pkl', 'rb') as f:
-    model = pickle.load(f)clear
+    model = pickle.load(f)
 
-# HTML Template with a modern, attractive Tailwind CSS layout
+# HTML Template with Tailwind CSS layout
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
@@ -160,8 +160,6 @@ def home():
     prediction = None
     if request.method == 'POST':
         try:
-            # Extract features in the exact order expected by the model:
-            # ['gender', 'ssc_p', 'ssc_b', 'hsc_p', 'hsc_b', 'hsc_s', 'degree_p', 'degree_t', 'workex', 'etest_p', 'specialisation', 'mba_p']
             features = [
                 float(request.form['gender']),
                 float(request.form['ssc_p']),
