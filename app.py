@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Load the trained Decision Tree model
 with open('decision.pkl', 'rb') as f:
-    model = pickle.load(f)
+    model = pickle.load(f)clear
 
 # HTML Template with a modern, attractive Tailwind CSS layout
 HTML_TEMPLATE = """
